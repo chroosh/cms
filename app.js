@@ -1,7 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import path from 'path';
 
 import routes from './routes/index.js';
 
@@ -28,17 +27,6 @@ app.use((err, req, res, next) => {
     res.status(500).send(`Error: ${err}`);
     next();
 });
-
-
-// frontend
-app.use(express.static(path.join(__dirname, 'client/build')));
-
-// serves index html for '/
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/client/build/index.html'));
-})
-
-
 
 
 routes(app);
