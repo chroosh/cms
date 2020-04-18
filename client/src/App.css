@@ -1,3 +1,4 @@
+/* app.css sets css rules for react components */
 .App {
   text-align: center;
   font-size: calc(10px + 2vmin);
@@ -36,7 +37,7 @@ button:focus {
   outline: none;
 }
 
-ul {
+ul.blog {
   list-style: none;
   text-align: left;
   padding: 15px;
@@ -44,7 +45,7 @@ ul {
   border-radius: 5px;
 }
 
-li {
+ul.blog li {
   padding: 15px;
   font-size: 1.5rem;
   margin-bottom: 15px;

@@ -2,7 +2,7 @@ import React from 'react';
 
 const ListBlog = ({blogs}) => {
     return (
-        <ul>
+        <ul className="blog">
             {
                 blogs && blogs.length > 0 ?
                 (

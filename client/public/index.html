@@ -24,10 +24,59 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Christopher Shi</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- maybe replace this with a react dom? -->
+    <nav id="menubar"></nav>
+
+    <!-- using static html for now just to make this working, will have to switch later to react (doesn't make sense to use static html in react) -->
+    <div class="wrapper">
+      <div class="topleft">
+        <p>
+            My name is Christopher Shi and I'm a final-year Computer Science and Finance student at the University of New South Wales, Sydney.
+            <br><br>
+            I'm currently a teaching assistant for COMP9447 Security Engineering Workshop and ENGG1000 Engineering Design.
+            <br><br>
+            During my spare time I also watch F1 🏎, make my own coffee ☕️ and play around with Photoshop to make stuff like ➡️
+        </p>
+      </div>
+
+      <div class="topright">
+        <img src="./better-pixel-art-coming-soon.gif">
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="topleft">
+          <b>Stuff I've done (will do): </b>
+          <ul>
+              <li>Incoming Software Engineer at Atlassian (2021)</li>
+              <li>Teaching Assistant for COMP9447, COMP9301, ENGG1000</li>
+              <li>Organised a Cybersecurity Summit at UNSW for over 400 people</li>
+              <li>Led UNSW Data Science Society in 2019 + running an international hackathon with a $5K aud prize pool</li>
+              <li>Worked at 1Scope, helping bring more opportunities to Australian school children</li>
+          </ul>
+      </div>
+
+      <div class="topright">
+          <b>Hobbies (mild addictions haha): </b>
+          <ul>
+              <li>Playing with pixel / isometric art</li>
+              <li>Gymming</li>
+              <li>Travel photography / videography</li>
+              <li>Mechanical keyboards</li>
+              <li>Vim</li>
+              <li>80's music / eurobeat / 80's everything</li>
+              <li>Doing things with the cloud / security / games</li>
+              <li>Hobby coding</li>
+          </ul>
+      </div>
+    </div>
+
+
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -39,5 +88,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+		<script src="menubar.js"></script>
   </body>
 </html>
