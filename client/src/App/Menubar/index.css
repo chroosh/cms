@@ -1,0 +1,26 @@
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+ul.nav li {
+  float: right;
+  font-size: 20px;
+}
+
+ul.nav li.home {
+  float: left;
+}
+
+ul.nav li a {
+  display: block;
+  color: #333333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+

@@ -1,0 +1,15 @@
+/* App level CSS rules  */
+.App {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+
+  margin: 14px 16px;
+  padding-bottom: 30px;
+}
