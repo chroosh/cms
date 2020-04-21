@@ -10,13 +10,13 @@ function App() {
 			<Menubar />
 
 			<div className="wrapper">
-				<Tile pos={topLeft}/>
-				<Tile pos={topRight}/>
+				<Tile text={topLeft}/>
+				<Tile text={topRight}/>
 			</div>
 
 			<div className="wrapper">
-				<Tile pos={bottomLeft}/>
-				<Tile pos={bottomRight}/>
+				<Tile text={bottomLeft}/>
+				<Tile text={bottomRight}/>
 			</div>
 
       <Blog />

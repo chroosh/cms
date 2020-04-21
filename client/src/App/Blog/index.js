@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import ListBlog from './ListBlog';
+import {BlogTile} from './BlogTile';
 import './index.css';
 
 class Blog extends Component {
@@ -27,11 +27,25 @@ class Blog extends Component {
 	render() {
 		let { blogs } = this.state;
 		return (
-			<div>
-				<h1>my blogs</h1>
-				{/* what was input supposed to be anyway? */}
-				{/* <Input /> */}
-				<ListBlog blogs={blogs}/>
+			<div className="blogContainer">
+				<b>My blogs</b>
+				{/* maybe consider using css grid instead of just dot points */}
+				<ul className="blog">
+					{
+						blogs && blogs.length > 0 ?
+						(
+							blogs.map(blog => {
+								return (
+									<li>
+										<BlogTile text={blog.markdown}/>
+									</li>
+								)
+							})
+						) : (
+							<>No blogs</>
+						)
+					}
+				</ul>
 			</div>
 		)
 	}

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+// TODO change to title tile
 const topLeft = (
 	<p>
 		My name is Christopher Shi and I'm a final-year Computer Science and Finance student at the University of New South Wales, Sydney.
@@ -46,10 +46,11 @@ const bottomRight = (
 class Tile extends Component {
 	render() {
 		return (
-			<div className="tile">{this.props.pos}</div>
+			<div className="tile">{this.props.text}</div>
 		);
 	}
 }
 
 // TODO standardise exports across project
 export {topLeft, topRight, bottomLeft, bottomRight, Tile}
+
