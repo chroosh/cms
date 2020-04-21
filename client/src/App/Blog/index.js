@@ -29,6 +29,7 @@ class Blog extends Component {
 		return (
 			<div className="blogContainer">
 				<b>My blogs</b>
+				<br />
 				{/* maybe consider using css grid instead of just dot points */}
 				<ul className="blog">
 					{
@@ -37,7 +38,9 @@ class Blog extends Component {
 							blogs.map(blog => {
 								return (
 									<li>
+										<br />
 										<BlogTile text={blog.markdown}/>
+										<br />
 									</li>
 								)
 							})
