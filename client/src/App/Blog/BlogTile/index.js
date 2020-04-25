@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
+import ReactMarkdown from 'markdown-to-jsx';
 import './index.css'
 
 class BlogTile extends Component {
   render() {
     return (
-      <div className="blogtile">
-        {this.props.text}
-      </div>
+      <ReactMarkdown children={this.props.text} />
     );
   }
 }

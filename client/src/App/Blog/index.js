@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import axios from 'axios';
 import {BlogTile} from './BlogTile';
+import Divider from '@material-ui/core/Divider';
 import './index.css';
 
 class Blog extends Component {
@@ -26,30 +27,25 @@ class Blog extends Component {
 
 	render() {
 		let { blogs } = this.state;
-		return (
-			<div className="blogContainer">
-				<b>My blogs</b>
-				<br />
-				{/* maybe consider using css grid instead of just dot points */}
-				<ul className="blog">
-					{
-						blogs && blogs.length > 0 ?
-						(
-							blogs.map(blog => {
-								return (
-									<li>
-										<br />
-										<BlogTile text={blog.markdown}/>
-										<br />
-									</li>
-								)
-							})
-						) : (
-							<>No blogs</>
-						)
-					}
-				</ul>
-			</div>
+		return(
+			<Fragment>
+				{
+					blogs && blogs.length > 0 ?
+					(
+						blogs.map(blog => {
+							return (
+								<Fragment>
+									<BlogTile text={blog.markdown} />
+									<Divider />
+								</Fragment>
+							)
+						})
+					) : (
+						<>No blogs</>
+					)
+				}
+			</Fragment>
+
 		)
 	}
 }
