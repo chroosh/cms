@@ -1,53 +1,46 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Divider from '@material-ui/core/Divider';
-// import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 
 // local imports 
-import {BlogTile} from './BlogTile';
+import BlogCard from './BlogCard';
 import './index.css';
 
-
-// use react state hooks to convert class into react hook function?
-
-const useStyles = makeStyles((theme) => ({
-	markdown: {
-		...theme.typography.body2,
-		padding: theme.spacing(3, 0),
-	},
-}));
+const useStyles = makeStyles({
+	blog: {
+		padding: '0px',
+	}
+});
 
 function Blog() {
 	const classes = useStyles();
 	const [blogs, setBlogs] = useState([])
 
-	axios.get('/blogs')
-		.then(res => {
-			setBlogs(res.data);
-		})
-		.catch(err => console.log(err))
+	useEffect(() => {
+		axios.get('/blogs')
+			.then(res => {
+				setBlogs(res.data);
+			})
+			.catch(err => console.log(err))
 
+	}, [])
 
 	return(
-		<Fragment>
+		<Container className={classes.blog}>
 			{
 				blogs && blogs.length > 0 ?
 				(
 					blogs.map(blog => {
 						return (
-							<Fragment>
-								<Divider />
-								<BlogTile className={classes.markdown} text={blog.markdown} />
-								
-							</Fragment>
+							<BlogCard text={blog.markdown} />
 						)
 					})
 				) : (
 					<>No blogs</>
 				)
 			}
-		</Fragment>
+		</Container>
 	)
 };
 
