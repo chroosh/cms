@@ -4,13 +4,6 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Card from '@material-ui/core/Card';
 import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-// import './index.css'
-
-// const styles = (theme) => ({
-//   listItem: {
-//     marginTop: theme.spacing(1),
-//   },
-// });
 
 // provides custom theming for below typography rules (used in markdown)
 // the ThemeProvider allows us to control the styles of the Typography components using this

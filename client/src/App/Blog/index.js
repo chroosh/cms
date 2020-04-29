@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // local imports 
 import BlogCard from './BlogCard';
-import './index.css';
 
 const useStyles = makeStyles({
 	blog: {
@@ -37,7 +36,7 @@ function Blog() {
 						)
 					})
 				) : (
-					<>No blogs</>
+					<BlogCard text='# No blogs here' />
 				)
 			}
 		</Container>
