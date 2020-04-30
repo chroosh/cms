@@ -31,7 +31,7 @@ app.use((err, req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-	res.sendFile(path.join(path.resolve()+'/client/public/index.html'));
+	res.sendFile(path.join(path.resolve(), '/client/build'));
 });
 
 
