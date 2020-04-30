@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import blog from '../models/blogModel.js';
 
-exports.getAllBlogs = (req, res) => {
+const getAllBlogs = (req, res) => {
 	// xTODO copied from note example
 	blog.find({}, (err, blogs) => {
 		if (err) {
@@ -12,7 +12,7 @@ exports.getAllBlogs = (req, res) => {
 	});
 };
 
-exports.getBlog = (req, res) => {
+const getBlog = (req, res) => {
 	// xTODO copied from notes example
 	node.findById(req.params.blogId, (err, blog) => {
 		if (err) {
@@ -24,7 +24,7 @@ exports.getBlog = (req, res) => {
 };
 
 
-exports.createBlog = (req, res) => {
+const createBlog = (req, res) => {
 	const newBlog = new blog(req.body);
 
 	newBlog.save((err, blog) => {
@@ -36,3 +36,5 @@ exports.createBlog = (req, res) => {
 
 	});
 };
+
+export default {getAllBlogs, getBlog, createBlog};

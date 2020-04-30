@@ -11,15 +11,15 @@
     "clean": "rm -rf dist && mkdir dist",
     "build": "babel . -s -D -d dist --presets env --ignore node_modules",
     "serve": "node dist/server.js",
-    "dev": "concurrently --kill-others --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "dev": "concurrently --kill-others --kill-others-on-fail \"npm run start\" \"npm run client\"",
     "start": "node server.js --exec babel-node --presets env",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client && npm install --only=dev && npm install && npm run build"
-	},
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.9.9"
+    "mongoose": "^5.9.11"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -28,6 +28,7 @@
     "nodemon": "^2.0.3"
   },
   "engines": {
-    "node": "12.13.1"
-  }
+    "node": "14.1.0"
+  },
+  "type": "module"
 }
