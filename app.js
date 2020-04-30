@@ -1,13 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-
 import routes from './routes/index.js';
 
 const app = express();
 
-
-mongoose.connect('mongodb://localhost');
+const connection ="mongodb+srv://chroosh:dSkeo9qP4pRGEelV@cluster0-mbnns.mongodb.net/test?retryWrites=true&w=majority"
+mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+    .then(() => console.log("Database Connected Successfully"))
+    .catch(err => console.log(err));
 
 
 // app.use() gets called each time a request is hit to the server
