@@ -11,11 +11,10 @@ mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, u
     .then(() => console.log("Database Connected Successfully"))
     .catch(err => console.log(err));
 
-
 // app.use() gets called each time a request is hit to the server
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(path.resolve(), 'client/build')));
+
 
 // catch 400
 app.use((err, req, res, next) => {
@@ -31,10 +30,12 @@ app.use((err, req, res, next) => {
     next();
 });
 
+routes(app);
+
+app.use(express.static(path.join(path.resolve(), 'client/build')));
+
 app.get('*', (req, res) => {
 	res.sendFile(path.join(path.resolve(), '/client/build/index.html'));
 });
 
-
-routes(app);
 export default app;
