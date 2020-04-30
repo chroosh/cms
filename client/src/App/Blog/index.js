@@ -17,7 +17,7 @@ function Blog() {
 	const [blogs, setBlogs] = useState([])
 
 	useEffect(() => {
-		axios.get('/blogs')
+		axios.get('/api/blogs')
 			.then(res => {
 				setBlogs(res.data);
 			})

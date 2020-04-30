@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import path from 'path';
 import routes from './routes/index.js';
 
 const app = express();
@@ -27,6 +28,10 @@ app.use((err, req, res, next) => {
     console.log(err.stack)
     res.status(500).send(`Error: ${err}`);
     next();
+});
+
+app.get('/', (req, res) => {
+	res.sendFile(path.join(path.resolve()+'/client/public/index.html'));
 });
 
 
