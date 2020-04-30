@@ -5,8 +5,7 @@ import path from 'path';
 import routes from './routes/index.js';
 
 const app = express();
-
-const connection ="mongodb+srv://chroosh:dSkeo9qP4pRGEelV@cluster0-mbnns.mongodb.net/test?retryWrites=true&w=majority"
+const connection ="mongodb+srv://chroosh:i0gr8t96YbM4mUVk@cluster0-mbnns.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
     .then(() => console.log("Database Connected Successfully"))
     .catch(err => console.log(err));
@@ -32,7 +31,9 @@ app.use((err, req, res, next) => {
 
 routes(app);
 
-app.use(express.static(path.join(path.resolve(), 'client/build')));
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static(path.join(path.resolve(), 'client/build')));
+}
 
 app.get('*', (req, res) => {
 	res.sendFile(path.join(path.resolve(), '/client/build/index.html'));
