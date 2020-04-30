@@ -15,6 +15,7 @@ mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, u
 // app.use() gets called each time a request is hit to the server
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static(path.join(path.resolve(), 'client/build')));
 
 // catch 400
 app.use((err, req, res, next) => {
